@@ -1,0 +1,44 @@
+{
+  "name": "DK Farms",
+  "tagline": "Slow stays in the Sahyadris.",
+  "description": "A quiet farm stay near Karjat and Lonavala, two hours from Mumbai. Private pool villa, garden cottage and hill-view rooms, home-style food, pet friendly.",
+  "url": "https://www.dkfarms.in",
+  "whatsappNumber": "91XXXXXXXXXX",
+  "phoneDisplay": "+91 XXXXX XXXXX",
+  "phoneLink": "+91XXXXXXXXXX",
+  "email": "stay@dkfarms.in",
+  "instagram": "dkfarms",
+  "address": {
+    "line": "[Address line], [Village name]",
+    "locality": "Karjat",
+    "region": "Maharashtra",
+    "postalCode": "[PIN]",
+    "country": "IN"
+  },
+  "geo": { "lat": 18.9107, "lng": 73.3236 },
+  "mapsUrl": "https://maps.google.com/?q=Karjat,+Maharashtra",
+  "areaLabel": "Karjat · Lonavala hills",
+  "nearLabel": "[Village name], near Karjat · Lonavala",
+  "checkIn": "1 PM",
+  "checkOut": "11 AM",
+  "priceFromLabel": "₹X,XXX",
+  "rating": { "value": 4.7, "count": 0, "url": "" },
+  "driveTimes": [
+    { "from": "Mumbai", "time": "~2 hrs", "icon": "car" },
+    { "from": "Pune", "time": "~2.5 hrs", "icon": "car" },
+    { "from": "Navi Mumbai", "time": "~1.5 hrs", "icon": "car" },
+    { "from": "Karjat station", "time": "~20 min", "icon": "train" }
+  ],
+  "howToReach": [
+    { "title": "By car", "line": "Via the Expressway · free parking", "icon": "car" },
+    { "title": "By train", "line": "Get off at Karjat, 20 min away", "icon": "train" },
+    { "title": "Pick-up", "line": "Available on request", "icon": "van" }
+  ],
+  "highlights": [
+    { "label": "Private pool", "icon": "pool" },
+    { "label": "Valley view", "icon": "mountain" },
+    { "label": "Pet friendly", "icon": "paw" },
+    { "label": "Home-style food", "icon": "food" },
+    { "label": "2 hrs from Mumbai", "icon": "car" }
+  ]
+}

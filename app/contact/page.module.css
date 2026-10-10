@@ -1,0 +1,285 @@
+/* Hero */
+.hero {
+  position: relative;
+  isolation: isolate;
+  min-height: clamp(360px, 52vh, 480px);
+  padding-top: clamp(64px, 9vh, 96px);
+  text-align: center;
+}
+.hero > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.heroImg {
+  object-fit: cover;
+  object-position: center 30%;
+  z-index: -1;
+}
+
+/* Contact cards, overlapping the hero */
+.cards {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: -120px;
+  padding-bottom: var(--section-y);
+}
+.contactCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 28px;
+  box-shadow: var(--shadow-2);
+}
+.contactCard :global(.icon-badge) {
+  margin-bottom: 8px;
+}
+.contactCard :global(.btn),
+.contactLink {
+  margin-top: 12px;
+}
+.contactLink {
+  font-weight: 500;
+  text-decoration: none;
+}
+.contactLink:hover {
+  text-decoration: underline;
+}
+@media (max-width: 1000px) {
+  .cards {
+    grid-template-columns: 1fr;
+    margin-top: -80px;
+  }
+  .contactCard {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+      "icon title action"
+      "icon line action";
+    align-items: center;
+    column-gap: 16px;
+    row-gap: 0;
+    padding: 18px 20px;
+  }
+  .contactCard :global(.icon-badge) {
+    grid-area: icon;
+    margin: 0;
+  }
+  .contactCard h2 {
+    grid-area: title;
+    font-size: 22px;
+  }
+  .contactCard p {
+    grid-area: line;
+    font-size: var(--text-xs);
+  }
+  .contactCard :global(.btn),
+  .contactLink {
+    grid-area: action;
+    margin: 0;
+  }
+  .contactLink {
+    font-size: var(--text-xs);
+  }
+}
+@media (max-width: 640px) {
+  .contactCard {
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "icon title"
+      "icon line"
+      "action action";
+  }
+  .contactCard :global(.btn),
+  .contactLink {
+    justify-self: start;
+    margin-top: 12px;
+  }
+}
+
+/* Enquiry */
+.enquiry {
+  padding-block: var(--section-y);
+  scroll-margin-top: var(--header-h);
+}
+.enquiryInner {
+  max-width: calc(760px + 2 * var(--gutter));
+}
+.enquiryCard {
+  padding: clamp(24px, 4vw, 48px);
+  box-shadow: var(--shadow-2);
+  overflow: visible;
+}
+.enquiryHead {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: var(--space-8);
+  text-align: center;
+}
+
+/* Find us */
+.findUs {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 20px;
+}
+.mapCard {
+  position: relative;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  min-height: 440px;
+}
+.map {
+  position: absolute;
+  inset: 0;
+}
+.address {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+  box-shadow: var(--shadow-1);
+}
+.address > svg {
+  flex: none;
+  color: var(--color-accent-strong);
+}
+.address address {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-style: normal;
+  font-size: var(--text-xs);
+  line-height: 1.4;
+}
+.address strong {
+  font-weight: 500;
+  font-size: var(--text-sm);
+}
+.drives {
+  padding: 28px;
+}
+.drives ul {
+  margin-top: 16px;
+}
+.drives li {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--text-sm);
+}
+.drives strong {
+  font-weight: 500;
+}
+.reach {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+.reach li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  border-radius: var(--radius-lg);
+}
+.reach li > span:last-child {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--text-xs);
+  line-height: 1.4;
+  color: var(--color-text-soft);
+}
+.reach strong {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text);
+}
+@media (max-width: 1000px) {
+  .findUs,
+  .reach {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 640px) {
+  .mapCard {
+    min-height: 380px;
+  }
+  .address {
+    flex-wrap: wrap;
+  }
+}
+
+/* FAQ */
+.faq {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-10);
+}
+.faqList {
+  width: 100%;
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.faqItem {
+  border-radius: var(--radius-lg);
+  background: rgb(255 255 255 / 0.55);
+  transition: background var(--dur-fast) var(--ease);
+}
+.faqItem[open] {
+  background: var(--color-surface);
+}
+.faqItem summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 56px;
+  padding: 14px 20px;
+  font-weight: 500;
+  list-style: none;
+  cursor: pointer;
+}
+.faqItem summary::-webkit-details-marker {
+  display: none;
+}
+.faqItem summary svg {
+  flex: none;
+  transition: transform var(--dur-fast) var(--ease);
+}
+.faqItem[open] summary svg {
+  transform: rotate(180deg);
+}
+.faqItem p {
+  padding: 0 20px 18px;
+  color: var(--color-text-soft);
+}
+.faqMore {
+  color: var(--color-text-soft);
+}
+.askDia {
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  background: none;
+  color: var(--color-accent-strong);
+  font-weight: 500;
+}

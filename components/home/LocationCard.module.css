@@ -1,0 +1,40 @@
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: var(--radius-panel);
+  box-shadow: 0 10px 30px rgb(var(--shadow-rgb) / 0.06);
+}
+@media (max-width: 1000px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+  padding: clamp(28px, 4vw, 56px);
+}
+.drives {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.drives li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.drives strong {
+  font-weight: 500;
+}
+.map {
+  min-height: 440px;
+}
+@media (max-width: 640px) {
+  .map {
+    min-height: 300px;
+  }
+}

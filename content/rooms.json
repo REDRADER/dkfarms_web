@@ -1,0 +1,137 @@
+[
+  {
+    "slug": "pool-villa",
+    "name": "Pool Villa",
+    "line": "Your own pool, facing the valley.",
+    "detailLine": "Your own pool and a wide valley view, made for slow mornings.",
+    "priceFrom": null,
+    "guests": 4,
+    "bed": "King",
+    "size": "650 sq ft",
+    "view": "Valley",
+    "photos": [
+      { "image": "pool-villa", "alt": "Pool villa exterior with private pool", "label": "Villa" },
+      { "image": "deluxe-room", "alt": "King bedroom with a valley window", "label": "Bedroom" },
+      { "image": "villa-bath", "alt": "Bathroom with freestanding tub", "label": "Bathroom" },
+      { "image": "pool", "alt": "Private pool facing the hills", "label": "Private pool" },
+      { "image": "valley", "alt": "Valley view from the villa", "label": "View" },
+      { "image": "sunrise", "alt": "Sunrise over the Sahyadris", "label": "Sunrise" }
+    ],
+    "facts": [
+      { "icon": "users", "label": "Up to 4 guests" },
+      { "icon": "bed", "label": "1 king bed" },
+      { "icon": "size", "label": "650 sq ft" },
+      { "icon": "mountain", "label": "Valley view" },
+      { "icon": "pool", "label": "Private pool" }
+    ],
+    "amenities": [
+      { "icon": "ac", "label": "AC" },
+      { "icon": "wifi", "label": "Wi-Fi" },
+      { "icon": "tv", "label": "Smart TV" },
+      { "icon": "fridge", "label": "Mini fridge" },
+      { "icon": "coffee", "label": "Tea / coffee" },
+      { "icon": "bath", "label": "Bathtub" },
+      { "icon": "balcony", "label": "Balcony" },
+      { "icon": "bell", "label": "Room service" }
+    ],
+    "included": [
+      { "icon": "coffee", "label": "Breakfast" },
+      { "icon": "pool", "label": "Pool access" },
+      { "icon": "parking", "label": "Parking" },
+      { "icon": "flame", "label": "Bonfire" }
+    ],
+    "rules": [
+      { "icon": "login", "label": "Check-in", "value": "1 PM" },
+      { "icon": "logout", "label": "Check-out", "value": "11 AM" },
+      { "icon": "paw", "label": "Pets", "value": "Allowed" },
+      { "icon": "noSmoking", "label": "Smoking", "value": "Not indoors" }
+    ]
+  },
+  {
+    "slug": "garden-cottage",
+    "name": "Garden Cottage",
+    "line": "Tucked among the mango trees.",
+    "detailLine": "A quiet cottage under the mango trees, with a sit-out for long chai mornings.",
+    "priceFrom": null,
+    "guests": 3,
+    "bed": "Queen",
+    "size": "XXX sq ft",
+    "view": "Garden",
+    "photos": [
+      { "image": "garden-cottage", "alt": "Garden cottage among trees", "label": "Cottage" },
+      { "image": "deluxe-room", "alt": "Cottage bedroom", "label": "Bedroom" },
+      { "image": "food", "alt": "Breakfast thali", "label": "Breakfast" }
+    ],
+    "facts": [
+      { "icon": "users", "label": "Up to 3 guests" },
+      { "icon": "bed", "label": "1 queen bed" },
+      { "icon": "size", "label": "XXX sq ft" },
+      { "icon": "trees", "label": "Garden view" }
+    ],
+    "amenities": [
+      { "icon": "trees", "label": "Sit-out" },
+      { "icon": "wifi", "label": "Wi-Fi" },
+      { "icon": "ac", "label": "AC" },
+      { "icon": "coffee", "label": "Tea & coffee" },
+      { "icon": "shower", "label": "Rain shower" },
+      { "icon": "paw", "label": "Pet friendly" },
+      { "icon": "food", "label": "Breakfast" },
+      { "icon": "parking", "label": "Parking" }
+    ],
+    "included": [
+      { "icon": "coffee", "label": "Breakfast" },
+      { "icon": "pool", "label": "Pool access" },
+      { "icon": "parking", "label": "Parking" },
+      { "icon": "flame", "label": "Bonfire" }
+    ],
+    "rules": [
+      { "icon": "login", "label": "Check-in", "value": "1 PM" },
+      { "icon": "logout", "label": "Check-out", "value": "11 AM" },
+      { "icon": "paw", "label": "Pets", "value": "Allowed" },
+      { "icon": "noSmoking", "label": "Smoking", "value": "Not indoors" }
+    ]
+  },
+  {
+    "slug": "deluxe-room",
+    "name": "Deluxe Room",
+    "line": "Simple, bright, all hills.",
+    "detailLine": "A bright room with a big window onto the hills. Simple, clean and calm.",
+    "priceFrom": null,
+    "guests": 2,
+    "bed": "Queen",
+    "size": "XXX sq ft",
+    "view": "Hills",
+    "photos": [
+      { "image": "deluxe-room", "alt": "Deluxe room with large window", "label": "Room" },
+      { "image": "sunrise", "alt": "Sunrise from the balcony", "label": "Balcony" },
+      { "image": "valley", "alt": "Valley view", "label": "View" }
+    ],
+    "facts": [
+      { "icon": "users", "label": "Up to 2 guests" },
+      { "icon": "bed", "label": "1 queen bed" },
+      { "icon": "size", "label": "XXX sq ft" },
+      { "icon": "mountain", "label": "Hill view" }
+    ],
+    "amenities": [
+      { "icon": "balcony", "label": "Balcony" },
+      { "icon": "wifi", "label": "Wi-Fi" },
+      { "icon": "ac", "label": "AC" },
+      { "icon": "tv", "label": "Smart TV" },
+      { "icon": "coffee", "label": "Tea & coffee" },
+      { "icon": "shower", "label": "Rain shower" },
+      { "icon": "food", "label": "Breakfast" },
+      { "icon": "parking", "label": "Parking" }
+    ],
+    "included": [
+      { "icon": "coffee", "label": "Breakfast" },
+      { "icon": "pool", "label": "Pool access" },
+      { "icon": "parking", "label": "Parking" }
+    ],
+    "rules": [
+      { "icon": "login", "label": "Check-in", "value": "1 PM" },
+      { "icon": "logout", "label": "Check-out", "value": "11 AM" },
+      { "icon": "paw", "label": "Pets", "value": "On request" },
+      { "icon": "noSmoking", "label": "Smoking", "value": "Not indoors" }
+    ]
+  }
+]

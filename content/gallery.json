@@ -1,0 +1,21 @@
+{
+  "categories": ["Rooms", "Pool", "Food", "Experiences", "Events", "Monsoon"],
+  "photos": [
+    { "image": "valley", "caption": "Valley mornings", "alt": "Misty valley at sunrise", "categories": ["Experiences", "Monsoon"], "cols": 2, "rows": 3 },
+    { "image": "pool", "caption": "Infinity pool", "alt": "Pool facing the hills", "categories": ["Pool"], "cols": 1, "rows": 3 },
+    { "image": "deluxe-room", "caption": "Deluxe Room", "alt": "Bright room with hill view", "categories": ["Rooms"], "cols": 1, "rows": 2 },
+    { "image": "food", "caption": "Thali lunch", "alt": "Maharashtrian thali", "categories": ["Food"], "cols": 1, "rows": 2 },
+    { "image": "bonfire", "caption": "Bonfire nights", "alt": "Bonfire under the stars", "categories": ["Experiences"], "cols": 1, "rows": 3 },
+    { "image": "waterfall", "caption": "Monsoon falls", "alt": "Waterfall in the monsoon", "categories": ["Monsoon"], "cols": 1, "rows": 3 },
+    { "image": "pool-villa", "caption": "Pool Villa", "alt": "Pool villa with private pool", "categories": ["Rooms", "Pool"], "cols": 2, "rows": 2 },
+    { "image": "events", "caption": "Lawn dinners", "alt": "Long table under string lights", "categories": ["Events"], "cols": 1, "rows": 3 },
+    { "image": "spa", "caption": "Spa", "alt": "Spa stones and leaf", "categories": ["Experiences"], "cols": 1, "rows": 2 },
+    { "image": "garden-cottage", "caption": "Garden Cottage", "alt": "Cottage among trees", "categories": ["Rooms"], "cols": 1, "rows": 2 },
+    { "image": "monsoon", "caption": "First rains", "alt": "Rain over green hills", "categories": ["Monsoon"], "cols": 2, "rows": 3 },
+    { "image": "breakfast", "caption": "Chai & poha", "alt": "Breakfast of poha and chai", "categories": ["Food"], "cols": 1, "rows": 3 },
+    { "image": "games", "caption": "Carrom", "alt": "Carrom board on the lawn", "categories": ["Experiences"], "cols": 1, "rows": 2 },
+    { "image": "trek", "caption": "Ridge trek", "alt": "Trail along a green ridge", "categories": ["Experiences", "Monsoon"], "cols": 1, "rows": 3 },
+    { "image": "villa-bath", "caption": "Villa bath", "alt": "Bathroom with freestanding tub", "categories": ["Rooms"], "cols": 1, "rows": 2 },
+    { "image": "sunrise", "caption": "Golden hour", "alt": "Sunrise over the hills", "categories": ["Experiences"], "cols": 1, "rows": 2 }
+  ]
+}

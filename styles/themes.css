@@ -1,0 +1,97 @@
+/*
+ * Colour systems.
+ *
+ * Three palettes from the design brief. Components never use raw hex values,
+ * only the semantic tokens below. The live site ships one theme, chosen by
+ * NEXT_PUBLIC_THEME; the other two are kept for testing with the client.
+ *
+ * Contrast (WCAG AA, 4.5:1) was checked for: white on --color-accent,
+ * --color-link on --color-bg, --color-accent-strong on both pastels,
+ * --color-text-muted on --color-bg and --color-pastel-2, footer text on footer.
+ * Blush's terracotta was darkened from #B5655A (4.2:1) to #A85A4F (4.95:1).
+ */
+
+:root,
+[data-theme="sage"] {
+  --color-bg: #faf8f3;
+  --color-surface: #ffffff;
+  --color-pastel-1: #dde8dc;
+  --color-pastel-1-deep: #c9d8c7;
+  --color-pastel-2: #f1e4d3;
+  --color-accent: #5e7d63;
+  --color-accent-hover: #4b6a51;
+  --color-accent-strong: #3f5a45;
+  --color-link: #3f5a45;
+  --color-on-accent: #ffffff;
+  --color-text: #2f3a33;
+  --color-text-soft: #3d4a41;
+  --color-text-muted: #4e5b52;
+  --color-border: #ece6da;
+  --color-border-soft: #f0ebe1;
+  --color-chip-border: #cfdccd;
+  --color-field-border: #e5ded0;
+  --color-footer-bg: #2f3a33;
+  --color-footer-text: #c3cfc4;
+  --color-footer-heading: #ffffff;
+  --color-footer-muted: #a9b7ab;
+  --color-footer-icon: #dde8dc;
+  --shadow-rgb: 47 58 51;
+  --header-bg: rgb(250 248 243 / 0.88);
+  --theme-color: #faf8f3;
+}
+
+[data-theme="blush"] {
+  --color-bg: #fff9f5;
+  --color-surface: #ffffff;
+  --color-pastel-1: #f6ddd8;
+  --color-pastel-1-deep: #eecac2;
+  --color-pastel-2: #fbebd7;
+  --color-accent: #a85a4f;
+  --color-accent-hover: #934d43;
+  --color-accent-strong: #8a4a40;
+  --color-link: #8a4a40;
+  --color-on-accent: #ffffff;
+  --color-text: #3a2e2c;
+  --color-text-soft: #4a3b38;
+  --color-text-muted: #5e4d4a;
+  --color-border: #f0e2d8;
+  --color-border-soft: #f5ebe4;
+  --color-chip-border: #ebcfc8;
+  --color-field-border: #ecdcd2;
+  --color-footer-bg: #3a2e2c;
+  --color-footer-text: #d9c9c5;
+  --color-footer-heading: #ffffff;
+  --color-footer-muted: #b8a6a2;
+  --color-footer-icon: #f6ddd8;
+  --shadow-rgb: 58 46 44;
+  --header-bg: rgb(255 249 245 / 0.88);
+  --theme-color: #fff9f5;
+}
+
+[data-theme="mist"] {
+  --color-bg: #f7fafb;
+  --color-surface: #ffffff;
+  --color-pastel-1: #dcebf0;
+  --color-pastel-1-deep: #c6dde5;
+  --color-pastel-2: #e6e1f2;
+  --color-accent: #3f6e80;
+  --color-accent-hover: #345c6b;
+  --color-accent-strong: #2e5363;
+  --color-link: #2e5363;
+  --color-on-accent: #ffffff;
+  --color-text: #263238;
+  --color-text-soft: #36454c;
+  --color-text-muted: #4a5a62;
+  --color-border: #e3eaee;
+  --color-border-soft: #ebf0f3;
+  --color-chip-border: #c9dce3;
+  --color-field-border: #dbe4e9;
+  --color-footer-bg: #263238;
+  --color-footer-text: #bfcdd3;
+  --color-footer-heading: #ffffff;
+  --color-footer-muted: #9aabb3;
+  --color-footer-icon: #dcebf0;
+  --shadow-rgb: 38 50 56;
+  --header-bg: rgb(247 250 251 / 0.88);
+  --theme-color: #f7fafb;
+}

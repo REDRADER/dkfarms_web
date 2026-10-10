@@ -1,0 +1,106 @@
+{
+  "bot": {
+    "name": "Dia",
+    "status": "Usually replies instantly",
+    "welcome": "Namaste! I'm Dia. Planning a slow weekend? Tap a question below.",
+    "launcherHint": "Questions? Ask Dia",
+    "moreTopicsLabel": "Other questions",
+    "notFoundLine": "Didn't find your answer? We're one message away."
+  },
+  "startTopics": ["prices", "check-in", "day-picnic", "directions", "rooms", "pets", "food", "cancellation"],
+  "topics": [
+    {
+      "id": "prices",
+      "question": "Prices",
+      "faq": "How much does a stay cost?",
+      "answer": "Rooms start from ₹X,XXX a night with breakfast. Weekends and long weekends cost a little more.",
+      "next": ["price-pool-villa", "price-garden-cottage", "price-deluxe-room", "day-picnic"],
+      "actions": ["enquire", "whatsapp"]
+    },
+    {
+      "id": "price-pool-villa",
+      "question": "Pool Villa price",
+      "answer": "The Pool Villa starts from ₹X,XXX a night for up to 4 guests, with breakfast and your own pool.",
+      "actions": [{ "label": "See the Pool Villa", "href": "/rooms/pool-villa" }, "enquire"]
+    },
+    {
+      "id": "price-garden-cottage",
+      "question": "Garden Cottage price",
+      "answer": "The Garden Cottage starts from ₹X,XXX a night for up to 3 guests, with breakfast.",
+      "actions": [{ "label": "See the Garden Cottage", "href": "/rooms/garden-cottage" }, "enquire"]
+    },
+    {
+      "id": "price-deluxe-room",
+      "question": "Deluxe Room price",
+      "answer": "The Deluxe Room starts from ₹X,XXX a night for 2 guests, with breakfast.",
+      "actions": [{ "label": "See the Deluxe Room", "href": "/rooms/deluxe-room" }, "enquire"]
+    },
+    {
+      "id": "check-in",
+      "question": "Check-in time",
+      "faq": "What are the check-in and check-out times?",
+      "answer": "Check-in from 1 PM, check-out by 11 AM. Early check-in on request.",
+      "next": ["early-check-in"]
+    },
+    {
+      "id": "early-check-in",
+      "question": "Can I check in early?",
+      "answer": "If the room is free, yes. Message us a day before and we'll confirm.",
+      "actions": ["whatsapp"]
+    },
+    {
+      "id": "day-picnic",
+      "question": "Day picnic",
+      "faq": "Do you offer day picnics?",
+      "answer": "Yes. 10 AM to 6 PM with pool, lunch and games. ₹X,XXX per person.",
+      "next": ["picnic-group"],
+      "actions": ["enquire", "whatsapp"]
+    },
+    {
+      "id": "picnic-group",
+      "question": "Groups and kids",
+      "answer": "Groups are welcome. Kids under 5 come free; under 12 at half price.",
+      "actions": ["enquire"]
+    },
+    {
+      "id": "directions",
+      "question": "Directions",
+      "faq": "How do I get there?",
+      "answer": "We're ~2 hrs from Mumbai and ~2.5 hrs from Pune, 20 minutes from Karjat station. Pick-up on request.",
+      "next": ["parking"],
+      "actions": ["directions", "whatsapp"]
+    },
+    {
+      "id": "parking",
+      "question": "Is there parking?",
+      "faq": "Is there parking?",
+      "answer": "Free parking on site for all guests."
+    },
+    {
+      "id": "rooms",
+      "question": "Rooms",
+      "answer": "Three quiet stays: the Pool Villa, the Garden Cottage and the Deluxe Room. All with breakfast.",
+      "next": ["price-pool-villa", "price-garden-cottage", "price-deluxe-room"],
+      "actions": [{ "label": "See all rooms", "href": "/rooms" }]
+    },
+    {
+      "id": "pets",
+      "question": "Pets",
+      "faq": "Are pets allowed?",
+      "answer": "Yes, well-behaved pets are welcome. Just let us know when you enquire."
+    },
+    {
+      "id": "food",
+      "question": "Food",
+      "faq": "What food do you serve?",
+      "answer": "Home-style Maharashtrian and North Indian meals, veg and non-veg. Breakfast is included with every stay."
+    },
+    {
+      "id": "cancellation",
+      "question": "Cancellation",
+      "faq": "What is the cancellation policy?",
+      "answer": "[Free cancellation up to X days before check-in.] See the full policy in the footer.",
+      "actions": [{ "label": "Read the policy", "href": "/policies/cancellation" }]
+    }
+  ]
+}

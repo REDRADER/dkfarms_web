@@ -1,0 +1,113 @@
+.slider {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--color-pastel-1);
+}
+.img {
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity var(--dur-slow) var(--ease);
+}
+.img.current {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Overlays sit on a translucent page-colour pill so they read on any photo */
+.count,
+.round {
+  background: color-mix(in srgb, var(--color-bg) 88%, transparent);
+  color: var(--color-text);
+}
+.count {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 2;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: var(--text-2xs);
+}
+
+.dots {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+}
+/* 8px dot inside a larger tap area */
+.dot {
+  display: grid;
+  place-items: center;
+  height: 24px;
+  padding: 0 4px;
+  border: 0;
+  background: none;
+}
+.dot::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--color-bg) 60%, transparent);
+  transition:
+    width var(--dur-fast) var(--ease),
+    background var(--dur-fast) var(--ease);
+}
+.dot[aria-current="true"]::before {
+  width: 28px;
+  background: var(--color-bg);
+}
+
+.nav {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 2;
+  display: flex;
+  gap: 10px;
+}
+.round {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  transition: background var(--dur-fast) var(--ease);
+}
+.round:hover {
+  background: var(--color-surface);
+}
+
+@media (max-width: 640px) {
+  .count {
+    top: 12px;
+    right: 12px;
+    padding: 3px 10px;
+    font-size: var(--text-3xs);
+  }
+  .dots {
+    left: 10px;
+    bottom: 12px;
+  }
+  .dot::before {
+    height: 6px;
+    width: 6px;
+  }
+  .dot[aria-current="true"]::before {
+    width: 22px;
+  }
+  .nav {
+    right: 12px;
+    bottom: 12px;
+    gap: 8px;
+  }
+  .round {
+    width: 44px;
+    height: 44px;
+  }
+}

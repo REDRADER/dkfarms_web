@@ -1,0 +1,63 @@
+.map {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-pastel-1);
+}
+.svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.svg path {
+  fill: none;
+  stroke-linecap: round;
+}
+.river {
+  stroke: var(--color-pastel-1-deep);
+}
+.sand {
+  stroke: var(--color-pastel-2);
+}
+.road {
+  stroke: var(--color-bg);
+}
+.halo {
+  fill: var(--color-accent);
+}
+.pin {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.pinLabel {
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--color-bg);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  box-shadow: 0 6px 18px rgb(var(--shadow-rgb) / 0.12);
+}
+.pinIcon {
+  fill: var(--color-bg);
+  color: var(--color-accent-strong);
+}
+.left,
+.right {
+  position: absolute;
+  font-size: var(--text-2xs);
+  color: var(--color-text-soft);
+}
+.left {
+  left: 24px;
+  bottom: 22px;
+}
+.right {
+  right: 24px;
+  top: 22px;
+}

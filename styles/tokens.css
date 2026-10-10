@@ -1,0 +1,79 @@
+/*
+ * Design tokens that do not change between colour themes.
+ * Sizes come from the DK Farms designs (desktop 1440 / mobile 390) and
+ * scale fluidly between the two with clamp().
+ */
+
+:root {
+  /* Typography. Font variables are set by next/font in app/layout.tsx. */
+  --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-dm-sans), "DM Sans", system-ui, sans-serif;
+
+  --text-display: clamp(3.25rem, 2.2rem + 4.2vw, 5.25rem); /* 52 → 84 */
+  --text-h1: clamp(3rem, 2.2rem + 3.4vw, 4.75rem); /* 48 → 76 */
+  --text-h2: clamp(2.5rem, 1.9rem + 2.4vw, 3.75rem); /* 40 → 60 */
+  --text-h2-sm: clamp(2rem, 1.7rem + 1.2vw, 2.375rem); /* 32 → 38 */
+  --text-h3: clamp(1.625rem, 1.45rem + 0.7vw, 1.875rem); /* 26 → 30 */
+  --text-lead: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem); /* 17 → 19 */
+  --text-body: clamp(1rem, 0.97rem + 0.12vw, 1.0625rem); /* 16 → 17 */
+  --text-sm: 0.9375rem; /* 15 */
+  --text-xs: 0.875rem; /* 14 */
+  --text-2xs: 0.8125rem; /* 13 */
+  --text-3xs: 0.75rem; /* 12 */
+
+  --leading-tight: 1.04;
+  --leading-snug: 1.15;
+  --leading-body: 1.6;
+  --tracking-eyebrow: 0.24em;
+  --measure: 68ch;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 1.75rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-14: 3.5rem;
+  --space-16: 4rem;
+  --section-y: clamp(4rem, 2.8rem + 4.6vw, 6.5rem); /* 64 → 104 */
+  --gutter: clamp(1.25rem, 0.6rem + 2.6vw, 2.5rem); /* 20 → 40 */
+  --container: 1200px;
+  --container-wide: 1280px;
+
+  /* Radius */
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-card: 24px;
+  --radius-panel: 28px;
+  --radius-pill: 999px;
+
+  /* Elevation (tinted by the theme's text colour) */
+  --shadow-1: 0 8px 24px rgb(var(--shadow-rgb) / 0.06);
+  --shadow-2: 0 12px 30px rgb(var(--shadow-rgb) / 0.16);
+  --shadow-3: 0 24px 60px rgb(var(--shadow-rgb) / 0.18);
+  --shadow-hover: 0 22px 44px rgb(var(--shadow-rgb) / 0.1);
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur-fast: 0.25s;
+  --dur-med: 0.45s;
+  --dur-slow: 0.8s;
+
+  /* Layers */
+  --z-header: 20;
+  --z-float: 40;
+  --z-sheet: 60;
+  --z-modal: 80;
+
+  /* Icons: one set, one weight (brief: 24px grid, 1.5px stroke) */
+  --icon-stroke: 1.5;
+
+  --header-h: 72px;
+  --bottom-bar-h: 72px;
+}

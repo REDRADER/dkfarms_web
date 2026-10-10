@@ -1,0 +1,73 @@
+[
+  {
+    "slug": "cancellation",
+    "title": "Cancellation policy",
+    "intro": "Plans change. Here's how cancellations and date changes work.",
+    "sections": [
+      {
+        "heading": "Cancelling a stay",
+        "points": [
+          "[Free cancellation up to X days before check-in.]",
+          "[Cancellations within X days of check-in: X% of the booking amount is charged.]",
+          "[No-shows are charged in full.]"
+        ]
+      },
+      {
+        "heading": "Changing your dates",
+        "points": ["[Date changes are free, subject to availability, up to X days before check-in.]"]
+      },
+      {
+        "heading": "Refunds",
+        "points": ["[Refunds are processed to the original payment method within X working days.]"]
+      }
+    ]
+  },
+  {
+    "slug": "house-rules",
+    "title": "House rules",
+    "intro": "A few simple rules so everyone has a quiet, happy stay.",
+    "sections": [
+      {
+        "heading": "Timings",
+        "points": ["Check-in from 1 PM, check-out by 11 AM.", "[Quiet hours from 10 PM to 7 AM.]"]
+      },
+      {
+        "heading": "On the farm",
+        "points": [
+          "Well-behaved pets are welcome; please keep them on a leash in common areas.",
+          "No smoking indoors.",
+          "[Pool hours 8 AM to 8 PM. Children in the pool must be supervised.]",
+          "[Outside food and music systems: please ask us first.]"
+        ]
+      },
+      {
+        "heading": "ID",
+        "points": ["A government photo ID is needed for every adult guest at check-in."]
+      }
+    ]
+  },
+  {
+    "slug": "privacy",
+    "title": "Privacy policy",
+    "intro": "What we collect when you use this website, and why.",
+    "sections": [
+      {
+        "heading": "What we collect",
+        "points": [
+          "Enquiry details you choose to send us (name, phone, email, dates, guests and message), only to reply to your enquiry.",
+          "Anonymous usage statistics (Google Analytics) to understand which pages are useful."
+        ]
+      },
+      {
+        "heading": "WhatsApp",
+        "points": [
+          "WhatsApp buttons open WhatsApp with a message typed in. Nothing is sent until you tap Send in WhatsApp."
+        ]
+      },
+      {
+        "heading": "Your choices",
+        "points": ["To have your enquiry details deleted, write to us at stay@dkfarms.in."]
+      }
+    ]
+  }
+]

@@ -1,0 +1,76 @@
+{
+  "hero": {
+    "image": "hero-valley",
+    "alt": "Misty green valley at sunrise seen from DK Farms",
+    "title": "Slow down in the hills",
+    "line": "A quiet farm stay, two hours from the city."
+  },
+  "experiences": [
+    { "label": "Pool", "icon": "pool", "image": "pool", "alt": "Infinity pool facing the hills", "size": "large" },
+    { "label": "Spa", "icon": "leaf", "image": "spa", "alt": "Spa stones and leaf" },
+    { "label": "Bonfire", "icon": "flame", "image": "bonfire", "alt": "Evening bonfire under the stars" },
+    { "label": "Treks", "icon": "mountain", "image": "trek", "alt": "Trail along a green ridge" },
+    { "label": "Games", "icon": "game", "image": "games", "alt": "Carrom board on the lawn" }
+  ],
+  "packages": [
+    {
+      "id": "day-picnic",
+      "name": "Day Picnic",
+      "icon": "basket",
+      "includes": [
+        { "icon": "pool", "label": "Pool" },
+        { "icon": "food", "label": "Lunch" },
+        { "icon": "game", "label": "Games" },
+        { "icon": "sun", "label": "10–6" }
+      ]
+    },
+    {
+      "id": "couple-getaway",
+      "name": "Couple Getaway",
+      "icon": "heart",
+      "includes": [
+        { "icon": "bed", "label": "Stay" },
+        { "icon": "food", "label": "Dinner" },
+        { "icon": "leaf", "label": "Spa" },
+        { "icon": "flame", "label": "Bonfire" }
+      ]
+    },
+    {
+      "id": "family-weekend",
+      "name": "Family Weekend",
+      "icon": "home",
+      "includes": [
+        { "icon": "bed", "label": "2 nights" },
+        { "icon": "food", "label": "Meals" },
+        { "icon": "pool", "label": "Pool" },
+        { "icon": "game", "label": "Games" }
+      ]
+    },
+    {
+      "id": "corporate-offsite",
+      "name": "Corporate Offsite",
+      "icon": "board",
+      "includes": [
+        { "icon": "users", "label": "40 pax" },
+        { "icon": "board", "label": "Hall" },
+        { "icon": "food", "label": "Meals" },
+        { "icon": "flame", "label": "Bonfire" }
+      ]
+    }
+  ],
+  "reviews": [
+    { "quote": "Woke up above the clouds. Didn't want to leave.", "name": "[Guest name]", "city": "Mumbai" },
+    { "quote": "The food tasted like home. The kids still talk about the pool.", "name": "[Guest name]", "city": "Pune" },
+    { "quote": "Quiet, clean, and our dog was welcome everywhere.", "name": "[Guest name]", "city": "Thane" }
+  ],
+  "galleryStrip": [
+    { "image": "sunrise", "alt": "Sunrise over layered hills", "wide": false },
+    { "image": "pool", "alt": "Pool at golden hour", "wide": true },
+    { "image": "food", "alt": "Maharashtrian thali", "wide": false },
+    { "image": "waterfall", "alt": "Monsoon waterfall nearby", "wide": true },
+    { "image": "bonfire", "alt": "Bonfire night", "wide": false },
+    { "image": "garden-cottage", "alt": "Garden cottage", "wide": true },
+    { "image": "trek", "alt": "Ridge trek", "wide": false },
+    { "image": "valley", "alt": "Valley view", "wide": true }
+  ]
+}

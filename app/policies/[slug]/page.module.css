@@ -1,0 +1,52 @@
+.page {
+  max-width: calc(760px + 2 * var(--gutter));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+}
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.tabs a {
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  background: var(--color-pastel-2);
+  color: var(--color-text);
+  font-size: var(--text-xs);
+  text-decoration: none;
+}
+.tabs a[aria-current="page"] {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+}
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.section ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 1.2em;
+  color: var(--color-text-soft);
+}
+.section li::marker {
+  color: var(--color-accent);
+}
+.help {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 24px 28px;
+  border-radius: var(--radius-card);
+}

@@ -6,19 +6,28 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "images": "node scripts/optimize-images.mjs",
+    "placeholders": "node scripts/make-placeholders.mjs",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "lucide-react": "^1.54.0",
     "next": "16.4.0",
+    "nodemailer": "^10.0.16",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "server-only": "^0.0.1",
+    "zod": "^4.6.5"
   },
   "devDependencies": {
     "@types/node": "^20",
+    "@types/nodemailer": "^8.0.2",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.4.0",
+    "sharp": "^0.35.5",
     "typescript": "^5"
   },
   "packageManager": "pnpm@12.5.1"

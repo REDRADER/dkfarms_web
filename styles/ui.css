@@ -1,0 +1,344 @@
+/*
+ * UI primitives shared by every page. Wrapped in the `ui` cascade layer (order declared in app/globals.css), so
+ * component CSS Modules can override any of it without !important.
+ */
+
+@layer ui {
+  /* Layout */
+  .container {
+    width: 100%;
+    max-width: calc(var(--container) + 2 * var(--gutter));
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+  .container-wide {
+    max-width: calc(var(--container-wide) + 2 * var(--gutter));
+  }
+  .section {
+    padding-block: var(--section-y);
+  }
+  .band-1 {
+    background: var(--color-pastel-1);
+  }
+  .band-2 {
+    background: var(--color-pastel-2);
+  }
+
+  /* Type */
+  .t-display {
+    font-size: var(--text-display);
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+  }
+  .t-h1 {
+    font-size: var(--text-h1);
+    line-height: 1.02;
+  }
+  .t-h2 {
+    font-size: var(--text-h2);
+    line-height: 1.05;
+  }
+  .t-h2-sm {
+    font-size: var(--text-h2-sm);
+    line-height: 1.1;
+  }
+  .t-h3 {
+    font-size: var(--text-h3);
+    font-weight: 600;
+    line-height: 1.1;
+  }
+  .t-lead {
+    font-size: var(--text-lead);
+    color: var(--color-text-soft);
+  }
+  .t-muted {
+    color: var(--color-text-muted);
+  }
+  .t-eyebrow {
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-eyebrow);
+    text-transform: uppercase;
+    color: var(--color-accent-strong);
+  }
+
+  /* Section heading: title + one line */
+  .section-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-6);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-12);
+  }
+  .section-head > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .section-head--center {
+    justify-content: center;
+    text-align: center;
+  }
+  .section-head--center > div {
+    align-items: center;
+  }
+  .section-head p {
+    color: var(--color-text-muted);
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 44px;
+    padding: 12px 22px;
+    border: 0;
+    border-radius: var(--radius-pill);
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    line-height: 1.2;
+    text-decoration: none;
+    white-space: nowrap;
+    transition:
+      background var(--dur-fast) var(--ease),
+      color var(--dur-fast) var(--ease),
+      box-shadow var(--dur-fast) var(--ease);
+  }
+  .btn:hover {
+    background: var(--color-accent-hover);
+    color: var(--color-on-accent);
+  }
+  .btn:disabled,
+  .btn[aria-disabled="true"] {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+  .btn--lg {
+    padding: 16px 30px;
+    font-size: 1rem;
+    box-shadow: 0 10px 30px rgb(var(--shadow-rgb) / 0.18);
+  }
+  .btn--sm {
+    min-height: 40px;
+    padding: 10px 20px;
+    font-size: var(--text-xs);
+  }
+  .btn--block {
+    width: 100%;
+  }
+  .btn--soft {
+    background: var(--color-pastel-1);
+    color: var(--color-accent-strong);
+  }
+  .btn--soft:hover {
+    background: var(--color-pastel-1-deep);
+    color: var(--color-accent-strong);
+  }
+  .btn--sand {
+    background: var(--color-pastel-2);
+    color: var(--color-text);
+  }
+  .btn--sand:hover {
+    background: var(--color-pastel-1);
+    color: var(--color-text);
+  }
+  .btn--ghost {
+    background: transparent;
+    color: var(--color-text);
+    box-shadow: inset 0 0 0 1px var(--color-chip-border);
+  }
+  .btn--ghost:hover {
+    background: var(--color-pastel-1);
+    color: var(--color-text);
+  }
+
+  /* Text link with arrow */
+  .link-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    color: var(--color-link);
+    text-decoration: none;
+  }
+  .link-arrow svg {
+    transition: transform var(--dur-fast) var(--ease);
+  }
+  .link-arrow:hover svg {
+    transform: translateX(3px);
+  }
+
+  /* Chips (quick replies, filters, choices) */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 8px 16px;
+    border: 1px solid var(--color-chip-border);
+    border-radius: var(--radius-pill);
+    background: var(--color-surface);
+    color: var(--color-text);
+    font-size: var(--text-xs);
+    line-height: 1.3;
+    text-align: left;
+    text-decoration: none;
+    transition:
+      background var(--dur-fast) var(--ease),
+      border-color var(--dur-fast) var(--ease);
+  }
+  .chip:hover {
+    background: var(--color-pastel-1);
+  }
+  .chip[aria-pressed="true"],
+  .chip[aria-checked="true"] {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+  .chip--sand {
+    background: var(--color-pastel-2);
+    border-color: transparent;
+  }
+
+  /* Fact pill: icon + short label */
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: var(--radius-pill);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    font-size: var(--text-xs);
+    color: var(--color-text);
+  }
+  .pill svg {
+    color: var(--color-accent);
+  }
+  .pill--sand {
+    background: var(--color-pastel-2);
+    border-color: transparent;
+  }
+  .pill--sage {
+    background: var(--color-pastel-1);
+    border-color: transparent;
+  }
+
+  /* Icon inside a soft pastel circle */
+  .icon-badge {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: var(--badge, 44px);
+    height: var(--badge, 44px);
+    border-radius: var(--radius-pill);
+    background: var(--color-pastel-1);
+    color: var(--color-accent-strong);
+  }
+  .icon-badge--sand {
+    background: var(--color-pastel-2);
+  }
+  .icon-badge--white {
+    background: rgb(255 255 255 / 0.7);
+  }
+
+  /* Cards */
+  .card {
+    background: var(--color-surface);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-1);
+    overflow: hidden;
+  }
+  .card--lift {
+    transition:
+      transform var(--dur-med) var(--ease),
+      box-shadow var(--dur-med) var(--ease);
+  }
+  .card--lift img {
+    transition: transform var(--dur-slow) var(--ease);
+  }
+  @media (hover: hover) {
+    .card--lift:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+    .card--lift:hover img {
+      transform: scale(1.04);
+    }
+  }
+
+  /* Form fields */
+  .field-label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: var(--text-xs);
+    font-weight: 500;
+    color: var(--color-text);
+  }
+  .field {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    border: 1px solid var(--color-field-border);
+    border-radius: var(--radius-md);
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: 1rem;
+    font-weight: 400;
+    transition:
+      border-color var(--dur-fast) var(--ease),
+      background var(--dur-fast) var(--ease);
+  }
+  .field::placeholder {
+    color: var(--color-text-muted);
+    opacity: 0.8;
+  }
+  .field:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    background: var(--color-surface);
+    box-shadow: 0 0 0 3px rgb(var(--shadow-rgb) / 0.08);
+  }
+  .field[aria-invalid="true"] {
+    border-color: #b4483b;
+  }
+  .field-error {
+    font-size: var(--text-2xs);
+    font-weight: 400;
+    color: #a33d31;
+  }
+
+  /* Scroll-reveal: pure CSS, only where supported and motion is welcome */
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      .reveal {
+        animation: rise linear both;
+        animation-timeline: view();
+        animation-range: entry 0% cover 22%;
+      }
+    }
+  }
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(32px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .hscroll {
+    scrollbar-width: none;
+  }
+  .hscroll::-webkit-scrollbar {
+    display: none;
+  }
+}

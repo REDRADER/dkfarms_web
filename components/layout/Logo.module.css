@@ -1,0 +1,23 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-text);
+  text-decoration: none;
+}
+.mark {
+  color: var(--color-accent);
+}
+.word {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+.inverted {
+  color: var(--color-footer-heading);
+}
+.inverted .mark {
+  color: var(--color-footer-icon);
+}
