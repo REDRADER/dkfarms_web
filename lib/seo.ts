@@ -1,7 +1,7 @@
 import "server-only";
 import type { Metadata } from "next";
 import { images } from "@/content/images.generated";
-import { faqs, rooms, site, type Room } from "@/lib/content";
+import { faqs, home, rooms, site, type Room } from "@/lib/content";
 
 const abs = (path: string) => new URL(path, site.url).toString();
 
@@ -19,6 +19,7 @@ export function pageMeta({
 }): Metadata {
   const desc = description ?? site.description;
   const og = images[image];
+  if (!og) throw new Error(`pageMeta: unknown image "${image}"`);
   return {
     ...(title && { title }),
     description: desc,
@@ -30,10 +31,23 @@ export function pageMeta({
       siteName: site.name,
       title: title ? `${title} · ${site.name}` : site.name,
       description: desc,
-      images: og ? [{ url: og.src, width: og.width, height: og.height }] : undefined,
+      images: [{ url: og.src, width: og.width, height: og.height }],
     },
     twitter: { card: "summary_large_image" },
   };
+}
+
+/** "1 PM" / "11 AM" -> "13:00" / "11:00", the ISO 8601 time schema.org's Time expects. */
+function to24h(label: string): string {
+  const m = label.match(/^(\d{1,2})(?::(\d{2}))?\s*(AM|PM)?$/i);
+  if (!m) return label;
+  const [, h, min = "00", ampm] = m;
+  let hour = parseInt(h, 10);
+  if (ampm) {
+    const isPM = /pm/i.test(ampm);
+    hour = hour === 12 ? (isPM ? 12 : 0) : isPM ? hour + 12 : hour;
+  }
+  return `${String(hour).padStart(2, "0")}:${min}`;
 }
 
 const address = {
@@ -55,12 +69,12 @@ export function resortJsonLd() {
     url: site.url,
     telephone: site.phoneLink,
     email: site.email,
-    image: abs(images["hero-valley"].src),
+    image: abs(images[home.hero.image].src),
     address,
     geo: { "@type": "GeoCoordinates", latitude: site.geo.lat, longitude: site.geo.lng },
     hasMap: site.mapsUrl,
-    checkinTime: site.checkIn,
-    checkoutTime: site.checkOut,
+    checkinTime: to24h(site.checkIn),
+    checkoutTime: to24h(site.checkOut),
     petsAllowed: true,
     sameAs: [`https://instagram.com/${site.instagram}`],
     amenityFeature: site.highlights.map((h) => ({ "@type": "LocationFeatureSpecification", name: h.label, value: true })),

@@ -7,7 +7,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingActions } from "@/components/layout/FloatingActions";
 import { Analytics } from "@/components/analytics/Analytics";
-import { ThemeSwitcher } from "@/components/theme/ThemeSwitcher";
+import { ThemeSwitcherLoader } from "@/components/theme/ThemeSwitcherLoader";
 import { JsonLd } from "@/components/seo/JsonLd";
 import "./globals.css";
 import "@/styles/ui.css";
@@ -63,7 +63,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <main id="main">{children}</main>
         <Footer />
         <FloatingActions />
-        {themeSwitcherEnabled && <ThemeSwitcher initial={defaultTheme} />}
+        <ThemeSwitcherLoader />
         <Analytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
         <JsonLd data={resortJsonLd()} />
       </body>

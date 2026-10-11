@@ -45,6 +45,19 @@ export default function ChatPanel({
   const [current, setCurrent] = useState<string | null>(saved.current);
   const logRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
+  // On mobile (see the ".backdrop" breakpoint in Chat.module.css) the panel is a true
+  // modal bottom sheet with a blocking backdrop; on desktop it's a non-modal corner
+  // widget. aria-modal must track that, or a screen-reader user on mobile can tab
+  // into page content that's visually hidden behind the backdrop.
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 640px)");
+    const onChange = () => setIsMobile(mq.matches);
+    onChange();
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
 
   useEffect(() => {
     try {
@@ -118,7 +131,7 @@ export default function ChatPanel({
       <section
         id="dk-chat"
         role="dialog"
-        aria-modal="false"
+        aria-modal={isMobile}
         aria-labelledby="dk-chat-title"
         className={styles.panel}
         data-open={open}

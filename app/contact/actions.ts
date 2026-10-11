@@ -19,11 +19,21 @@ const options: EnquiryOptions = {
 const WINDOW_MS = 10 * 60 * 1000;
 const LIMIT = 5;
 const recent = new Map<string, number[]>();
+let housekeepingCounter = 0;
 
 function rateLimited(ip: string, now: number) {
   const hits = (recent.get(ip) ?? []).filter((t) => now - t < WINDOW_MS);
   hits.push(now);
   recent.set(ip, hits);
+
+  // Evict IPs that have aged out every so often, so `recent` doesn't grow
+  // without bound on a long-running (non-serverless) instance.
+  if (++housekeepingCounter % 200 === 0) {
+    for (const [key, timestamps] of recent) {
+      if (now - timestamps[timestamps.length - 1] >= WINDOW_MS) recent.delete(key);
+    }
+  }
+
   return hits.length > LIMIT;
 }
 
@@ -44,6 +54,15 @@ export async function sendEnquiryEmail(
   // Bots fill the hidden "company" field and submit instantly; pretend success.
   if (meta.company || now - meta.startedAt < 3000) return { ok: true };
 
+  // Trusts x-forwarded-for as set by the hosting platform's edge/proxy; if this is
+  // ever deployed somewhere that doesn't overwrite client-supplied headers, this
+  // check becomes trivially bypassable by rotating the header per request.
+  const h = await headers();
+  const ip = h.get("x-forwarded-for")?.split(",")[0].trim() || h.get("x-real-ip") || "unknown";
+  if (rateLimited(ip, now)) {
+    return { ok: false, error: "Too many enquiries from this connection. Please try WhatsApp instead." };
+  }
+
   const parsed = enquirySchema.safeParse(input);
   if (!parsed.success) {
     return { ok: false, error: z.prettifyError(parsed.error) };
@@ -52,11 +71,11 @@ export async function sendEnquiryEmail(
   if (e.stayType === "room" && e.rooms.some((r) => !options.rooms.some((o) => o.id === r))) {
     return { ok: false, error: "Unknown room selected." };
   }
-
-  const h = await headers();
-  const ip = h.get("x-forwarded-for")?.split(",")[0].trim() || h.get("x-real-ip") || "unknown";
-  if (rateLimited(ip, now)) {
-    return { ok: false, error: "Too many enquiries from this connection. Please try WhatsApp instead." };
+  if (e.stayType === "package" && !options.packages.some((o) => o.id === e.packageId)) {
+    return { ok: false, error: "Unknown package selected." };
+  }
+  if (!options.budgets.some((o) => o.id === e.budget)) {
+    return { ok: false, error: "Unknown budget selected." };
   }
 
   const user = process.env.GMAIL_USER;

@@ -70,6 +70,10 @@
   --z-float: 40;
   --z-sheet: 60;
   --z-modal: 80;
+  --z-grain: 100; /* film grain sits over everything, including the chat and modals */
+
+  /* Film grain: a tiled SVG noise texture over the whole site (see globals.css) */
+  --grain-opacity: 0.2;
 
   /* Icons: one set, one weight (brief: 24px grid, 1.5px stroke) */
   --icon-stroke: 1.5;

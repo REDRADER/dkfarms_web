@@ -28,12 +28,6 @@ export async function generateMetadata({ params }: PageProps<"/rooms/[slug]">) {
   });
 }
 
-/*
- * Every room is prerendered from generateStaticParams, so navigation is instant
- * anyway. Allowing this segment to block keeps a real 404 for unknown URLs.
- */
-export const instant = false;
-
 export default async function RoomPage({ params }: PageProps<"/rooms/[slug]">) {
   const { slug } = await params;
   const room = getRoom(slug);

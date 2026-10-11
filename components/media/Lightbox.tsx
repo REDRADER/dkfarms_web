@@ -41,6 +41,12 @@ export function Lightbox({
     if (!d) return;
     if (open && !d.open) d.showModal();
     if (!open && d.open) d.close();
+    // `showModal()` traps focus and Esc for free, but background scroll-through isn't
+    // guaranteed on every engine (notably older mobile Safari), so lock it ourselves too.
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [open]);
 
   useEffect(() => {

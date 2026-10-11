@@ -13,7 +13,14 @@
 
 import { readdir, mkdir, writeFile, stat } from "node:fs/promises";
 import path from "node:path";
-import sharp from "sharp";
+
+let sharp;
+try {
+  sharp = (await import("sharp")).default;
+} catch {
+  console.error('"sharp" isn\'t installed. Run `pnpm install` (it\'s a devDependency), then `pnpm images` again.');
+  process.exit(1);
+}
 
 const root = path.resolve(import.meta.dirname, "..");
 const srcDir = path.join(root, "photos");

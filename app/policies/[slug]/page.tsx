@@ -7,9 +7,6 @@ import { WhatsAppIcon } from "@/components/icons";
 import { JsonLd } from "@/components/seo/JsonLd";
 import styles from "./page.module.css";
 
-// All policies are prerendered; allowing the segment to block keeps a real 404 for unknown URLs.
-export const instant = false;
-
 export function generateStaticParams() {
   return policies.map((p) => ({ slug: p.slug }));
 }
@@ -17,7 +14,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps<"/policies/[slug]">) {
   const { slug } = await params;
   const policy = policies.find((p) => p.slug === slug);
-  if (!policy) return {};
+  if (!policy) notFound();
   return pageMeta({ title: policy.title, description: policy.intro, path: `/policies/${slug}` });
 }
 

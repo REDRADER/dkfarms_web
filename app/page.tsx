@@ -5,6 +5,7 @@ import { waLink, waMessage } from "@/lib/whatsapp";
 import { pageMeta } from "@/lib/seo";
 import { Icon, InstagramIcon, WhatsAppIcon } from "@/components/icons";
 import { Photo } from "@/components/ui/Photo";
+import { ScrollStrip } from "@/components/ui/ScrollStrip";
 import { RoomCard } from "@/components/cards/RoomCard";
 import { LocationCard } from "@/components/home/LocationCard";
 import styles from "./page.module.css";
@@ -180,13 +181,13 @@ export default function HomePage() {
             </a>
           </span>
         </div>
-        <ul role="list" className={`hscroll ${styles.strip}`}>
+        <ScrollStrip label="Photos" className={`hscroll ${styles.strip}`}>
           {home.galleryStrip.map((g, i) => (
             <li key={i} className={g.wide ? styles.wide : undefined}>
               <Photo image={g.image} alt={g.alt} fill sizes={g.wide ? "460px" : "300px"} />
             </li>
           ))}
-        </ul>
+        </ScrollStrip>
       </section>
 
       {/* 8. Location */}

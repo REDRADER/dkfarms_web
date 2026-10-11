@@ -87,6 +87,9 @@ function Wizard({ content, rooms, packages, whatsappNumber, prefill }: WizardPro
   const today = useSyncExternalStore(noSubscribe, readToday, () => "");
   const startedAt = useRef(0);
   const company = useRef<HTMLInputElement>(null);
+  // The honeypot input only exists on the "details" step; capture its value before
+  // it unmounts so a bot that fills it is still caught once we reach "review".
+  const companyValue = useRef("");
   const heading = useRef<HTMLHeadingElement>(null);
   const moved = useRef(false);
 
@@ -156,6 +159,7 @@ function Wizard({ content, rooms, packages, whatsappNumber, prefill }: WizardPro
   const next = () => {
     const e = validate(step);
     setErrors(e);
+    if (step === "details") companyValue.current = company.current?.value ?? "";
     if (Object.keys(e).length === 0) goTo(stepIndex + 1);
   };
 
@@ -169,7 +173,7 @@ function Wizard({ content, rooms, packages, whatsappNumber, prefill }: WizardPro
     startSending(async () => {
       const res = await sendEnquiryEmail(enquiry, {
         startedAt: startedAt.current,
-        company: company.current?.value ?? "",
+        company: companyValue.current,
       });
       moved.current = true;
       if (res.ok) {

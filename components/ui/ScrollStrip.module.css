@@ -1,0 +1,43 @@
+.wrap {
+  position: relative;
+}
+
+/* Same translucent page-colour pill as the room photo slider */
+.round {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--color-bg) 88%, transparent);
+  color: var(--color-text);
+  box-shadow: 0 4px 16px rgb(0 0 0 / 0.12);
+  transform: translateY(-50%);
+  transition:
+    opacity var(--dur-fast) var(--ease),
+    background var(--dur-fast) var(--ease);
+}
+.round:hover {
+  background: var(--color-surface);
+}
+.round:disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+.prev {
+  left: calc(var(--gutter) + 12px);
+}
+.next {
+  right: calc(var(--gutter) + 12px);
+}
+
+/* Touch screens swipe; the buttons are only for mouse and trackpad-less setups */
+@media (hover: none) {
+  .round {
+    display: none;
+  }
+}
